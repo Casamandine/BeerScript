@@ -1,0 +1,21 @@
+{
+  "name": "beerscript",
+  "version": "1.0.0",
+  "description": "beerscript from brewery api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Casamandine/BeerScript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Casamandine/BeerScript/issues"
+  },
+  "homepage": "https://github.com/Casamandine/BeerScript#readme"
+}
