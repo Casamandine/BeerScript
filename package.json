@@ -13,12 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-<<<<<<< HEAD
-    "commander": "^2.19.0",
-    "git": "^0.1.5"
-=======
     "commander": "^2.19.0"
->>>>>>> 6b5129e06ab5a298306188f3e41d51777dd2dd03
   },
   "devDependencies": {},
   "repository": {
