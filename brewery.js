@@ -1,12 +1,13 @@
-const command = require("commander")
+#!/usr/bin/env node
+const order = require("commander")
 
-command
-    .version('0.0..1')
-    .option ('-w', '--w', 'helllo world')
+order
+    .version('0.0.1')
+    .option ('-w, --world', 'helllo world')
 
-command.parse(process.argv)
+order.parse(process.argv)
 
-if(command.world)
+if (order.world)
     console.log('coucou la monde')
 
     
