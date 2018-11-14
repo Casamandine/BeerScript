@@ -8,13 +8,14 @@
   },
   "bin": {
     "whatsmybeer": "./beer.js",
-    "brewery":"./brewery.js"
+    "brewery": "./brewery.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-    "commander": "^2.19.0"
+    "commander": "^2.19.0",
+    "requirer": "0.0.4"
   },
   "devDependencies": {},
   "repository": {
