@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const command = require("commander")
-const inquirer = require("inquirer")
+const inquirer = require("requirer")
 
 
 command 
@@ -9,7 +9,7 @@ command
     .option('-a, --alphabet', 'Search by first letter')
     .parse(process.argv)
 
-if (command.world)
+if (command.alphabet)
     inquirer.prompt([{
         name: "letter",
         input: "input",
