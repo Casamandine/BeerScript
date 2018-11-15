@@ -1,24 +1,26 @@
 #!/usr/bin/env node
-const order = require("commander")
+const command = require("commander")
 const inquirer = require("requirer")
+const axios = require("axios")
 
+breweries={}
 
-order
+command
     .version('0.0.1')
-    .description('Brewery is a command is used to find your brewery in the brewery API and it had everythings you want !!')
-    .option('-a, --letter', 'Search by first letter')
+    .option('-i, --id[value]', 'Search by first letter')
     .parse(process.argv)
 
-order.parse(process.argv)
+if(command.id){
+    arg=process.argv.slice(1)
+    console.log(arg)
+    axios.get('https://sandbox-api.brewerydb.com/v2/brewery/'+arg+'/?key=0dc57b04be75a141664eb685134e5c7d')
+        .then((response)=>{
+            breweries = response.data.data
+            console.log(response)
+        })
+        .catch('ERREUR : l\'id'+arg+'n\est pas dans la base de donnée')
+}
 
-if (order.letter)
-    inquirer.prompt([{
-        name: "first_letter",
-        input: "input",
-        message: "Enter the first letter to discover a brewery"
-    }]).then((answers) => {
-        console.log(answers.name)
-    })
 
 
     
