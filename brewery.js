@@ -17,6 +17,7 @@ if(command.id){
     axios.get('https://sandbox-api.brewerydb.com/v2/brewery/'+ arg + key)
         .then((response) => {
             brewery['Name']= response.data.data.name
+            brewery['Site_Web'] = response.data.data.website
             return axios.get('https://sandbox-api.brewerydb.com/v2/brewery/'+arg+'/locations'+ key) 
         })
         .then((response) => {
@@ -27,7 +28,10 @@ if(command.id){
             }  
             console.log(brewery)        
         })
-        .catch('ERREUR : l\'id'+arg+'n\'est pas dans la base de donnée')
+        .catch((erreur) =>{
+            erreur = 'ERREUR : l\'id'+ arg + 'ne fais pas partis de l\API'
+            console.log(erreur)
+        })     
 
 }
 else if(command.random){
@@ -36,7 +40,10 @@ else if(command.random){
         brewery['Name'] = response.data.data.name
         console.log(brewery)
     })
-    .catch('ERREUR : Random n\a pas fonctionné')
+    .catch((erreur) => {
+        erreur = 'ERREUR : le random n\a pas fonctionné'
+        console.log(erreur)
+    })
 }
 
 
