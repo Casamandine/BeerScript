@@ -15,7 +15,9 @@
   "dependencies": {
     "axios": "^0.18.0",
     "commander": "^2.19.0",
-    "inquirer": "^6.2.0"
+    "inquirer": "^6.2.0",
+    "require": "^2.4.20",
+    "requirer": "0.0.4"
   },
   "devDependencies": {},
   "repository": {

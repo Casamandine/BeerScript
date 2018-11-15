@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const command = require("commander")
-const inquirer = require("requirer")
+const inquirer = require("inquirer")
 
 
 command 
@@ -10,11 +10,14 @@ command
     .parse(process.argv)
 
 if (command.alphabet)
-    inquirer.prompt([{
-        name: "letter",
-        input: "input",
-        message: "Enter the first letter of your beer"
-    }]).then((answers) => {
+    question = [
+        {
+            name: "letter",
+            input: "input",
+            message: "Enter the first letter of your beer",
+        }
+    ]  
+    inquirer.prompt(question).then((answers) => {
         console.log(answers.name)
-    })
+    });
 
