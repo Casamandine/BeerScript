@@ -4,7 +4,6 @@
 
 Notre projet utilise une API recensant des distilleries de bières et leurs bières en ligne.  
 [Lien vers le site de l'API](https://brewerydb.com/)  
-[Lien vers L'API](https://sandbox-api.brewerydb.com/v2/?key=0dc57b04be75a141664eb685134e5c7d)  
 
 Ce script permet en quelques commandes de trouver le nom de bières avec leur degrès d'alcool,
 mais aussi il permet de répertorier des brasserie avec leur localisation.  
