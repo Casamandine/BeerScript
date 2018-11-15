@@ -12,29 +12,38 @@ command
     .option('-r, --random', 'Get data of a random brewery')
     .parse(process.argv)
 
+
+
 if(command.id){
     arg = process.argv.slice(3)
-    axios.get('https://sandbox-api.brewerydb.com/v2/brewery/'+ arg + key)
-        .then((response) => {
-            brewery['Name']= response.data.data.name
-            brewery['Site_Web'] = response.data.data.website
-            return axios.get('https://sandbox-api.brewerydb.com/v2/brewery/'+arg+'/locations'+ key) 
-        })
-        .then((response) => {
-            let length = response.data.data.length
-            for(x=0; x < length; x++){
-                brewery['Locality'] = response.data.data[x].locality
-                brewery['Region'] = response.data.data[x].region
-            }  
-            console.log(brewery)        
-        })
-        .catch((erreur) =>{
-            erreur = 'ERREUR : l\'id'+ arg + 'ne fais pas partis de l\API'
-            console.log(erreur)
-        })     
+    if (process.argv.length > 4)
+        process.exit();
+
+        axios.get('https://sandbox-api.brewerydb.com/v2/brewery/'+ arg + key)
+            .then((response) => {
+                brewery['Name']= response.data.data.name
+                brewery['Site_Web'] = response.data.data.website
+                return axios.get('https://sandbox-api.brewerydb.com/v2/brewery/'+arg+'/locations'+ key) 
+            })
+            .then((response) => {
+                let length = response.data.data.length
+                for(x=0; x < length; x++){
+                    brewery['Locality'] = response.data.data[x].locality
+                    brewery['Region'] = response.data.data[x].region
+                }  
+                console.log(brewery)        
+            })
+            .catch((erreur) =>{
+                erreur = 'ERREUR : l\'id'+ arg + 'ne fais pas partis de l\API'
+                console.log(erreur)
+            })     
 
 }
 else if(command.random){
+
+    if (process.argv.length > 3)
+        process.exit();
+
     axios.get('https://sandbox-api.brewerydb.com/v2/brewery/random'+key)
     .then((response) => {
         brewery['Name'] = response.data.data.name
