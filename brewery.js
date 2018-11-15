@@ -3,13 +3,13 @@ const command = require("commander")
 const inquirer = require("requirer")
 const axios = require("axios")
 const key = "/?key=0dc57b04be75a141664eb685134e5c7d"
-let loc = {}
 
 brewery={}
 
 command
     .version('0.0.1')
     .option('-i, --id [value]', 'Search by first letter')
+    .option('-r, --random', 'Get data of a random brewery')
     .parse(process.argv)
 
 if(command.id){
@@ -28,6 +28,15 @@ if(command.id){
             console.log(brewery)        
         })
         .catch('ERREUR : l\'id'+arg+'n\'est pas dans la base de donnée')
+
+}
+else if(command.random){
+    axios.get('https://sandbox-api.brewerydb.com/v2/brewery/random'+key)
+    .then((response) => {
+        brewery['Name'] = response.data.data.name
+        console.log(brewery)
+    })
+    .catch('ERREUR : Random n\a pas fonctionné')
 }
 
 
