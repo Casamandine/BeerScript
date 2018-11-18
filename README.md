@@ -16,17 +16,29 @@ Cette commande sert à trouver une bière dans l'API à partir de son ID
   `$ whatsmybeer -i c4f2KE` ou 
   `$ whatsmybeer --id c4f2KE `  
   
+Cette commande permet de trouver une bière au hasard dans l'API (il faut entrer une valeur pour indiquer  
+le nombre de bières qu'on souhaite rechercher)
 * whatsmybeer -r [value] ou whatsmybeer --random [value]  
-`$ whatsmybeer -r 3` ou `$ whatsmybeer --random 2`  
+`$ whatsmybeer -r 3` ou 
+`$ whatsmybeer --random 2`  
+
+Si vous souhaitez enregistrer vos bières dans un document vous le pouvez en rajoutant l'extension '-s' sur la commande '-i'  
+De plus vous pourrez choisir entre créer, mettre à jour ou supprimer un fichier sauvegarde (.txt).
+
+* whatsmybeer -i [value] -s ou whatsmybeer -i [value] --save
+`$ whatsmybeer -i c4f2KE -s` ou 
+`$ whatsmybber -i c4f2KE --save`
 
 ##### 2. brewery :  
 Cette commande nous permet de trouver une distillerie de bière et sa localisation dans l'API à partir de son ID.  
 
 * brewery -i [value] ou brewery --id [value]  
-`$ brewery -i DMU2Kf` ou `$ brewery --id DMU2Kf`  
+`$ brewery -i DMU2Kf` ou
+ `$ brewery --id DMU2Kf`  
 
 * brewery -r ou brewery --random  
-`$ brewery -r` ou `$ brewery --random`
+`$ brewery -r` ou
+ `$ brewery --random`
 
 ### Les modules utilisés
 * Axios
