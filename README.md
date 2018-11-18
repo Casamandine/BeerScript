@@ -25,7 +25,7 @@ le nombre de bières qu'on souhaite rechercher)
 Si vous souhaitez enregistrer vos bières dans un document vous le pouvez en rajoutant l'extension '-s' sur la commande '-i'  
 De plus vous pourrez choisir entre créer, mettre à jour ou supprimer un fichier sauvegarde (.txt).
 
-* whatsmybeer -i [value] -s ou whatsmybeer -i [value] --save
+* whatsmybeer -i [value] -s ou whatsmybeer -i [value] --save  
 `$ whatsmybeer -i c4f2KE -s` ou 
 `$ whatsmybber -i c4f2KE --save`
 
